@@ -7,7 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 export class ZhlPage{
     private str: string;
-    private isShowMore:boolean;
+    private isShowMore:boolean;        /*控制是否显示某东西*/
     constructor(public navCtrl: NavController){
         this.str='hello angular!';
     }
