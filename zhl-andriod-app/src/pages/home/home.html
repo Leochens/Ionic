@@ -14,4 +14,34 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+   <form #blogpostForm="ngForm" (ngSubmit)="create(blogpostForm.value)">
+    <ion-item>
+      <ion-label>标题</ion-label>
+      <ion-input type="text" ngControl="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>作者</ion-label>
+      <ion-input type="text" ngControl="author"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>URL</ion-label>
+      <ion-input type="text" ngControl="slug"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>内容</ion-label>
+      <ion-textarea type="text" ngControl="body"></ion-textarea>
+    </ion-item>
+
+    <div padding>
+      <button block type="submit">创建</button>
+    </div>
+  </form>
+ <button ion-button color="light">Light</button>
+<button ion-button>Default</button>
+<button ion-button color="secondary">Secondary</button>
+<button ion-button color="danger">Danger</button>
+<button ion-button color="dark">Dark</button>
 </ion-content>
