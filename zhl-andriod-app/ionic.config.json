@@ -4,5 +4,15 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+    "proxies": [
+    {
+      "path": "/movie/",
+      "proxyUrl": "https://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100" 
+    },
+    {
+      "path": "/api/",
+      "proxyUrl": "http://localhost:301/api.php" 
+    }    
+  ]  
 }

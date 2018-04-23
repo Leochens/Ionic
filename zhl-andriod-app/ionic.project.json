@@ -1,0 +1,14 @@
+{
+  "name": "proxy-example",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/movie/",
+      "proxyUrl": "https://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100"
+    },
+    {
+      "path": "/api/",
+      "proxyUrl": "https://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100" 
+    }    
+  ]
+}
