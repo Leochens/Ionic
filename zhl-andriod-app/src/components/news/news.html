@@ -1,0 +1,16 @@
+
+
+<!-- Generated template for the NewsComponent component -->
+<h1>新闻列表</h1>
+<ul>
+   <li  *ngFor="let item of items" >
+    <span>id:{{item.id}}</span>
+    <span>content:{{item.content}}</span>
+    <span>time:{{item.time}}</span>
+  </li> 
+  <!-- <h1 *ngIf='hello'>jaajajaja</h1> -->
+</ul>
+<button (click)="getData()">get</button>
+
+
+
