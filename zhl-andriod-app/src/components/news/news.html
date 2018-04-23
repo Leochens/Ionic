@@ -3,10 +3,10 @@
 <!-- Generated template for the NewsComponent component -->
 <h1>新闻列表</h1>
 <ul>
-   <li  *ngFor="let item of items" >
-    <span>id:{{item.id}}</span>
-    <span>content:{{item.content}}</span>
-    <span>time:{{item.time}}</span>
+   <li  *ngFor="let item of Data" >
+    <span>片名:{{item.nm}}</span>
+    <span>导演:{{item.dir}}</span>
+    <span><img src="{{item.img}}"></span>
   </li> 
   <!-- <h1 *ngIf='hello'>jaajajaja</h1> -->
 </ul>

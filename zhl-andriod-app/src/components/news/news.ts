@@ -18,7 +18,7 @@ export class NewsComponent {
 
   //text: string;
   items:newsItem[]=[];
-  data:any[];
+  Data:any[];
   constructor(private http:HttpClient) {
     console.log('Hello NewsComponent Component');
     this.items=NEWS;
@@ -28,6 +28,7 @@ export class NewsComponent {
         this.http.get('/movie')
             .subscribe(data=>{
                 console.log(data);
+                this.Data=data["data"]["movies"];
             });
 
   }
