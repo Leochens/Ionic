@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { Observable } from 'rxjs';
+import { of } from 'rxjs/observable/of';
 
 /*装饰器*/
 @Component({
@@ -10,9 +11,11 @@ import { NavController } from 'ionic-angular';
 /*组件类*/
 export class HomePage {
 
+  
   constructor(public navCtrl: NavController) {
 
   }
+  
 
 }
 

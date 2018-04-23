@@ -5,43 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-   <form #blogpostForm="ngForm" (ngSubmit)="create(blogpostForm.value)">
-    <ion-item>
-      <ion-label>标题</ion-label>
-      <ion-input type="text" ngControl="title"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>作者</ion-label>
-      <ion-input type="text" ngControl="author"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>URL</ion-label>
-      <ion-input type="text" ngControl="slug"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>内容</ion-label>
-      <ion-textarea type="text" ngControl="body"></ion-textarea>
-    </ion-item>
-
-    <div padding>
-      <button block type="submit">创建</button>
-    </div>
-  </form>
- <button ion-button color="light">Light</button>
-<button ion-button>Default</button>
-<button ion-button color="secondary">Secondary</button>
-<button ion-button color="danger">Danger</button>
-<button ion-button color="dark">Dark</button>
+  
+  <ion-grid>
+  <ion-row>
+    <ion-col col-12>This column will take 12 columns</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>This column will take 6 columns</ion-col>
+  </ion-row>
+</ion-grid>
+<news></news>  
 </ion-content>
