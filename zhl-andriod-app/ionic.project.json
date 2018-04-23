@@ -9,6 +9,10 @@
     {
       "path": "/api/",
       "proxyUrl": "https://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100" 
-    }    
+    } ,
+    {
+      "path": "/mokis/",
+      "proxyUrl": "http://mokis.top/bookmark/login.php" 
+    }        
   ]
 }
