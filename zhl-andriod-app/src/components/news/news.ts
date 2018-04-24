@@ -22,10 +22,11 @@ export class NewsComponent {
   constructor(private http:HttpClient) {
     console.log('Hello NewsComponent Component');
     this.items=NEWS;
+    this.getData();
   }
      getData():void{
         //response.setHeader("Access-Control-Allow-Origin", "*"); 
-        this.http.get('/movie')
+        this.http.get('/movie/')
             .subscribe(data=>{
                 console.log(data);
                 this.Data=data["data"]["movies"];
