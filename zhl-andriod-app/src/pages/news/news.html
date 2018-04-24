@@ -5,14 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>news</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
+<h1>新闻列表</h1>
+<ul>
+   <li  *ngFor="let item of Data" >
+    <span>片名:{{item.nm}}</span>
+    <span>导演:{{item.dir}}</span>
+    <br>
+    <span><img src="{{item.img}}"></span>
+    <span>{{item.showInfo}}</span>
+  </li> 
+  <!-- <h1 *ngIf='hello'>jaajajaja</h1> -->
+</ul>
+<button (click)="getData()">get</button>
 
 </ion-content>
