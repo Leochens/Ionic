@@ -8,10 +8,13 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ZhlPage } from '../pages/zhl/zhl';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NewsPageModule }  from '../pages/news/news.module';
+import { ThingsPageModule } from '../pages/things/things.module';
 import { ComponentsModule } from '../components/components.module';
+
+import { GetThingsProvider } from '../providers/get-things/get-things';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     BrowserModule,
     ComponentsModule,
+    NewsPageModule  ,
+    ThingsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -34,13 +39,13 @@ import { ComponentsModule } from '../components/components.module';
     ContactPage,
     HomePage,
     TabsPage,
-    ZhlPage,
-    
+    ZhlPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GetThingsProvider
   ]
 })
 export class AppModule {}
