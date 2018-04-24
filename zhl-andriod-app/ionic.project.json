@@ -8,7 +8,7 @@
     },
     {
       "path": "/api/",
-      "proxyUrl": "https://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100" 
+      "proxyUrl": "http://mokis.top/codebase/index.php?controller=api&method=index" 
     } ,
     {
       "path": "/mokis/",
