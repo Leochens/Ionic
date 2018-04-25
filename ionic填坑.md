@@ -58,3 +58,8 @@
     <!--传入this参数即可-->
     <button ion-button color="danger" (click)="delete(this)">删除</button>
     ```
+
+## 在安卓端启动太慢
+    1. 使用懒加载方法
+        https://blog.csdn.net/qq_32107121/article/details/78453242
+        记住把tabs也建立一个tabs.module.ts

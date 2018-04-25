@@ -11,7 +11,7 @@ export class GetThingsProvider {
   THINGS:ThingsObject[]=[]; //记住一定要初始化为数组
   constructor(public http: HttpClient) {
     console.log('Hello GetThingsProvider Provider');
-    this.http.get<ThingsObject>('/api/').subscribe(data=>{
+    this.http.get<ThingsObject>('http://mokis.top/codebase/index.php?controller=api&method=index').subscribe(data=>{
 
       for(let i of data['D'])
       {
