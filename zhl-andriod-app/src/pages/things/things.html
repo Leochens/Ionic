@@ -20,7 +20,8 @@
     <ion-input type="text" placeholder="Title" [(ngModel)]="addItem.title"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Content" [(ngModel)]="addItem.content"></ion-input>
+
+    <textarea type="text" placeholder="Content" [(ngModel)]="addItem.content"></textarea>
   </ion-item>
   <ion-item style="text-align: center;">
       <button ion-button col-12 (click)="add()">add</button>
@@ -48,3 +49,13 @@
 
 
 
+<style type="text/css">
+  textarea{
+    border: 0.2rem solid #eee;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    resize: none;
+    width: 100%;
+  }
+
+</style>
