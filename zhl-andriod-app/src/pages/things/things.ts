@@ -40,9 +40,9 @@ export class ThingsPage {
       let alert = this.MyAlert("提示");
       
   }
-  delete(item){
-    this.ThingsArr.delete(item);
-    this.MyAlert("调用删除函数");
+  delete(id:number){
+    this.ThingsArr.delete(id);
+    //this.MyAlert("调用删除函数");
   }
   add(){
     if(this.addItem.title == "")

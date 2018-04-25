@@ -32,8 +32,14 @@ export class GetThingsProvider {
   alert(){
       alert('Hello . I am getThingsProvider');
   }
-  delete(item):void{
-      this.THINGS.splice(this.THINGS.indexOf(item),1);
+  delete(id):void{
+    console.log(id);
+      for (var i = this.THINGS.length - 1; i >= 0; i--) {
+        if(this.THINGS[i].id==id)
+        {
+          this.THINGS.splice(i,1);
+        }
+      }
   }
   add(item:ThingsObject):void{
     this.THINGS.push(item);
