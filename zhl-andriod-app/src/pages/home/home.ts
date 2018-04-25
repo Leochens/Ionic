@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable/of';
 import { NewsPage } from '../news/news';
 import { ThingsPage } from '../things/things';
+import { IonicPage } from 'ionic-angular';
+@IonicPage()
 /*装饰器*/
 @Component({
   selector: 'page-home',
