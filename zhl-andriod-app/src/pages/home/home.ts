@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController,IonicPage } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable/of';
 import { NewsPage } from '../news/news';
 import { ThingsPage } from '../things/things';
 /*装饰器*/
-
-
-@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'//模板
