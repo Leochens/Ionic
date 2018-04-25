@@ -40,8 +40,11 @@ export class GetThingsProvider {
           this.THINGS.splice(i,1);
         }
       }
+      //TUDO：给服务器get数据进行删除 
   }
   add(item:ThingsObject):void{
     this.THINGS.push(item);
+    //TUDO : 给服务器post数据进行添加
+    
   }
 }
