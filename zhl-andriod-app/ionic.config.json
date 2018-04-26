@@ -12,7 +12,7 @@
     },
     {
       "path": "/api/",
-      "proxyUrl": "http://localhost:301/api/public/index.php/thing/api/index" 
+      "proxyUrl": "http://localhost:301/api/public/index.php/thing/api/" 
     }    
   ]  
 }

@@ -35,6 +35,7 @@ export class ThingsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ThingsPage');
   }
+
   getThings():void{
       this.Things=this.ThingsArr.THINGS;
       let alert = this.MyAlert("提示");
@@ -45,13 +46,15 @@ export class ThingsPage {
     //this.MyAlert("调用删除函数");
   }
   add(){
-    if(this.addItem.title == "")
+    let tmp:any=this.addItem;
+    if(tmp.title == "")
     {
-      this.addItem.title='Untitled'
+      tmp.title='Untitled';
     }
-    this.ThingsArr.add(this.addItem);
+    this.ThingsArr.add(tmp);
   }
   MyAlert(msg){
+
     this.alertCtrl.create({
         title:msg,
         subTitle:"来自Leochens",

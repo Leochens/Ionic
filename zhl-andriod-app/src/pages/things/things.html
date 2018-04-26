@@ -16,12 +16,13 @@
 <ion-content padding>
 
 <ion-list>
+
   <ion-item>
-    <ion-input type="text" placeholder="Title" [(ngModel)]="addItem.title"></ion-input>
+    <ion-input type="text" name="title" placeholder="Title" [(ngModel)]="addItem.title"></ion-input>
   </ion-item>
   <ion-item>
 
-    <textarea type="text" placeholder="Content" [(ngModel)]="addItem.content"></textarea>
+    <textarea type="text" name="content" placeholder="Content" [(ngModel)]="addItem.content"></textarea>
   </ion-item>
   <ion-item style="text-align: center;">
       <button ion-button col-12 (click)="add()">add</button>

@@ -11,7 +11,7 @@ export class GetThingsProvider {
   THINGS=[]; //记住一定要初始化为数组
   constructor(public http: HttpClient) {
     console.log('Hello GetThingsProvider Provider');
-    this.http.get<ThingsObject>('/api/').subscribe(data=>{
+    this.http.get<ThingsObject>('/api/index').subscribe(data=>{
 
       console.log(data['content']);
       for(let i of data['content'])
@@ -41,10 +41,22 @@ export class GetThingsProvider {
         }
       }
       //TUDO：给服务器get数据进行删除 
+      //并没有真正删除！
+      this.http.get('/api/delete?id='+id).subscribe(data=>{
+          console.log(data);
+    });
   }
-  add(item:ThingsObject):void{
+  add(item):void{
     this.THINGS.push(item);
     //TODO : 给服务器post数据进行添加
-    
+   this.http.post<ThingsObject>('/api/add', {
+     parmas:{
+       title:item.title,
+       content:item.content
+     }
+   }).subscribe(data=>
+      {
+          console.log(data);
+      });
   }
 }
