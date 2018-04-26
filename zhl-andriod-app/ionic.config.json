@@ -7,11 +7,11 @@
   },
     "proxies": [
     {
-      "path": "/movie/",
+      "path": "/movie",
       "proxyUrl": "https://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100" 
     },
     {
-      "path": "/api/",
+      "path": "/api",
       "proxyUrl": "http://mokis.top/tp5_origin/public/index.php/thing/api" 
     }    
   ]  

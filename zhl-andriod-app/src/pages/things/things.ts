@@ -22,7 +22,7 @@ export class ThingsPage {
 
   Things:ThingsObject[];
   addItem:ThingsObject={
-    title:"Untitled",content:"There is Nothing"
+    title:"",content:""
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -34,9 +34,6 @@ export class ThingsPage {
   }
 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ThingsPage');
-  }
 
   getThings():void{
       this.Things=this.ThingsArr.THINGS;
@@ -48,16 +45,36 @@ export class ThingsPage {
     //this.MyAlert("调用删除函数");
   }
   add(){
-   
-
-    let tmp:any=this.addItem;
-    if(tmp.title == "")
-    {
-      tmp.title='Untitled';
-    }
+    //临时变量tmp
+    let tmp:ThingsObject;
+    //给临时变量赋值 
+    //原因是如果直接tmp=this.addItem 则一旦addItem更改 添加好的tmp也会改
+    tmp={title:(this.addItem.title == "")?"未命名":this.addItem.title,
+    content:(this.addItem.content=="")?"什么都木有~":this.addItem.content};
+    //向服务器添加数据
     this.ThingsArr.add(tmp);
-    this.cd.detectChanges();  
+    //清空
+    this.addItem.content="";
+    this.addItem.title="";
   }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
+
+
+
+
+
+
+
+
   MyAlert(msg){
 
     this.alertCtrl.create({

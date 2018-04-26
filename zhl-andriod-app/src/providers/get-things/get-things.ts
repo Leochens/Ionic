@@ -13,15 +13,15 @@ import 'rxjs/add/operator/toPromise';
   and Angular DI.
 */
 @Injectable()
-export class GetThingsProvider {
+export class GetThingsProvider { 
 
-  url:string='/api/';
+  url:string='http://mokis.top/tp5_origin/public/index.php/thing/api';
   THINGS=[]; //记住一定要初始化为数组
   headers:Headers;
   options;
   constructor(public http: HttpClient) {
     console.log('Hello GetThingsProvider Provider');
-    this.http.get<ThingsObject>('/api/index').subscribe(data=>{
+    this.http.get<ThingsObject>(this.url+'/index').subscribe(data=>{
 
       console.log(data['content']);
       for(let i of data['content'])
@@ -48,7 +48,7 @@ export class GetThingsProvider {
           this.THINGS.splice(i,1);
         }
       }
-      this.http.get(this.url+'delete?id='+id).subscribe(data=>{
+      this.http.get(this.url+'/delete?id='+id).subscribe(data=>{
           console.log(data['msg']);
     });
   }
@@ -61,7 +61,7 @@ export class GetThingsProvider {
         'Authorization': 'my-auth-token'
       })
     };
-    this.http.post<ThingsObject>(this.url+"add", item, httpOptions)
+    this.http.post<ThingsObject>(this.url+"/add", item, httpOptions)
       .subscribe(data=>{
         console.log(data);
         });
