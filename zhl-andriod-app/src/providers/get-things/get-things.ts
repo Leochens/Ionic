@@ -1,6 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams,HttpHeaders } from '@angular/common/http';
+//import { RequestOptions,RequestOptionsArgs } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { ThingsObject } from '../../object/things.object';
+import { Http } from '@angular/http';
+import { Headers, RequestOptions, URLSearchParams ,RequestMethod} from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+
+
 /*
   Generated class for the GetThingsProvider provider.
   See https://angular.io/guide/dependency-injection for more info on providers
@@ -8,7 +14,11 @@ import { ThingsObject } from '../../object/things.object';
 */
 @Injectable()
 export class GetThingsProvider {
+
+  url:string='/api/';
   THINGS=[]; //记住一定要初始化为数组
+  headers:Headers;
+  options;
   constructor(public http: HttpClient) {
     console.log('Hello GetThingsProvider Provider');
     this.http.get<ThingsObject>('/api/index').subscribe(data=>{
@@ -19,19 +29,17 @@ export class GetThingsProvider {
         this.THINGS.push(i);
       }
     })
+ 
+
     console.log(this.THINGS);
-    /**
-     this.http.get<Hero[]>(this.heroesUrl)
-        .pipe(
-          tap(heroes => this.log(`fetched heroes`)),
-          catchError(this.handleError('getHeroes',[]))
-        );
-     */
+    
   }
   
-  alert(){
-      alert('Hello . I am getThingsProvider');
-  }
+  private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    }
+
   delete(id):void{
     console.log(id);
       for (var i = this.THINGS.length - 1; i >= 0; i--) {
@@ -40,23 +48,26 @@ export class GetThingsProvider {
           this.THINGS.splice(i,1);
         }
       }
-      //TUDO：给服务器get数据进行删除 
-      //并没有真正删除！
-      this.http.get('/api/delete?id='+id).subscribe(data=>{
-          console.log(data);
+      this.http.get(this.url+'delete?id='+id).subscribe(data=>{
+          console.log(data['msg']);
     });
   }
-  add(item):void{
-    this.THINGS.push(item);
-    //TODO : 给服务器post数据进行添加
-   this.http.post<ThingsObject>('/api/add', {
-     parmas:{
-       title:item.title,
-       content:item.content
-     }
-   }).subscribe(data=>
-      {
-          console.log(data);
-      });
+
+  add(item){
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'my-auth-token'
+      })
+    };
+    this.http.post<ThingsObject>(this.url+"add", item, httpOptions)
+      .subscribe(data=>{
+        console.log(data);
+        });
+      this.THINGS.push(item);
   }
+
+
+
 }

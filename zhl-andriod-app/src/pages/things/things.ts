@@ -5,7 +5,7 @@ import { GetThingsProvider } from '../../providers/get-things/get-things';
 import { ThingsObject  } from '../../object/things.object';
 
 import { AlertController } from 'ionic-angular';
-
+import { ChangeDetectorRef } from '@angular/core';  
 /**
  * Generated class for the ThingsPage page.
  *
@@ -22,12 +22,14 @@ export class ThingsPage {
 
   Things:ThingsObject[];
   addItem:ThingsObject={
-    id:888,title:"Untitled",content:"There is Nothing"
+    title:"Untitled",content:"There is Nothing"
   };
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
       public http:HttpClient,
       private ThingsArr:GetThingsProvider,
-      public alertCtrl:AlertController) {
+      public alertCtrl:AlertController,
+      public cd: ChangeDetectorRef) {
       this.getThings();
   }
 
@@ -46,12 +48,15 @@ export class ThingsPage {
     //this.MyAlert("调用删除函数");
   }
   add(){
+   
+
     let tmp:any=this.addItem;
     if(tmp.title == "")
     {
       tmp.title='Untitled';
     }
     this.ThingsArr.add(tmp);
+    this.cd.detectChanges();  
   }
   MyAlert(msg){
 

@@ -1,7 +1,7 @@
 
 
 export class ThingsObject{
-    id:number;
+    //id:number;
     title:string;
     content:string
 }
