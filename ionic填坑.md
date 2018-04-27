@@ -58,3 +58,24 @@
     <!--传入this参数即可-->
     <button ion-button color="danger" (click)="delete(this)">删除</button>
     ```
+
+## 下拉刷新
+    ```
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+     </ion-refresher>
+        
+        @Component({...})
+        export class NewsFeedPage {
+
+          doRefresh(refresher) {
+            console.log('Begin async operation', refresher);
+
+            setTimeout(() => {
+              console.log('Async operation has ended');
+              refresher.complete();
+            }, 2000);
+          }
+
+}
+    ```
