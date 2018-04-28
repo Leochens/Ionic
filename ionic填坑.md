@@ -59,7 +59,7 @@
     <button ion-button color="danger" (click)="delete(this)">删除</button>
     ```
 
-## 下拉刷新
+## 下拉刷新 
     ```
       <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
